@@ -6,6 +6,7 @@ C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\
 C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\ExceptionManager.AssemblyInfoInputs.cache
 C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\ExceptionManager.AssemblyInfo.cs
 C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\ExceptionManager.csproj.CoreCompileInputs.cache
+C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\ExceptionManager.sourcelink.json
 C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\ExceptionManager.dll
 C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\refint\ExceptionManager.dll
 C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\ExceptionManager.pdb

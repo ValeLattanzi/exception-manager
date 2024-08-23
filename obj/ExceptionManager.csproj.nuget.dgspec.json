@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\ExceptionManager.csproj": {}
+    "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\ExceptionManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\ExceptionManager.csproj": {
+    "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\ExceptionManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\ExceptionManager.csproj",
+        "projectUniqueName": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\ExceptionManager.csproj",
         "projectName": "ExceptionManager",
-        "projectPath": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\ExceptionManager.csproj",
+        "projectPath": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\ExceptionManager.csproj",
         "packagesPath": "C:\\Users\\Valentino\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\obj\\",
+        "outputPath": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

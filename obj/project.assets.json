@@ -5520,17 +5520,21 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Valentino\\.nuget\\packages\\": {}
+    "C:\\Users\\Valentino\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Proyectos\\ExceptionManager\\ExceptionManager.csproj",
+      "projectUniqueName": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\ExceptionManager.csproj",
       "projectName": "ExceptionManager",
-      "projectPath": "C:\\Proyectos\\ExceptionManager\\ExceptionManager.csproj",
+      "projectPath": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\ExceptionManager.csproj",
       "packagesPath": "C:\\Users\\Valentino\\.nuget\\packages\\",
-      "outputPath": "C:\\Proyectos\\ExceptionManager\\obj\\",
+      "outputPath": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\Valentino\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -5539,10 +5543,9 @@
         "net8.0"
       ],
       "sources": {
-        "C:\\MaxFlex\\VictoriaMaxFlexNet\\SistemaALL\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -5602,8 +5605,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error al obtener los datos de vulnerabilidad del paquete: No se puede cargar el índice de servicio del origen https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

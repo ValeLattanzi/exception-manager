@@ -11,3 +11,16 @@ C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\
 C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\refint\ExceptionManager.dll
 C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\ExceptionManager.pdb
 C:\Users\Valentino\Documents\Programacion\ExceptionManager\ExceptionManager\obj\Debug\net8.0\ref\ExceptionManager.dll
+C:\Proyectos\ExceptionManager\bin\Debug\net8.0\ExceptionManager.deps.json
+C:\Proyectos\ExceptionManager\bin\Debug\net8.0\ExceptionManager.dll
+C:\Proyectos\ExceptionManager\bin\Debug\net8.0\ExceptionManager.pdb
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\ExceptionManager.csproj.AssemblyReference.cache
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\ExceptionManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\ExceptionManager.AssemblyInfoInputs.cache
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\ExceptionManager.AssemblyInfo.cs
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\ExceptionManager.csproj.CoreCompileInputs.cache
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\ExceptionManager.sourcelink.json
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\ExceptionManager.dll
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\refint\ExceptionManager.dll
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\ExceptionManager.pdb
+C:\Proyectos\ExceptionManager\obj\Debug\net8.0\ref\ExceptionManager.dll

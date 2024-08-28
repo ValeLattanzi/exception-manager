@@ -1,14 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\",
+  "WorkspaceRootPath": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4AB6C6C5-1395-4696-8B0A-C6B0D6E58543}|ExceptionManager.csproj|c:\\users\\valentino\\documents\\programacion\\exceptionmanager\\exceptionmanager\\infrastructure\\middleware\\exceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4AB6C6C5-1395-4696-8B0A-C6B0D6E58543}|ExceptionManager.csproj|c:\\users\\valentino\\documents\\programacion\\exceptionmanager\\backend\\exceptionmanager\\infrastructure\\middleware\\exceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4AB6C6C5-1395-4696-8B0A-C6B0D6E58543}|ExceptionManager.csproj|solutionrelative:infrastructure\\middleware\\exceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AB6C6C5-1395-4696-8B0A-C6B0D6E58543}|ExceptionManager.csproj|c:\\users\\valentino\\documents\\programacion\\exceptionmanager\\exceptionmanager\\infrastructure\\controller\\exceptionmanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4AB6C6C5-1395-4696-8B0A-C6B0D6E58543}|ExceptionManager.csproj|solutionrelative:infrastructure\\controller\\exceptionmanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\Infrastructure\\Controller\\ExceptionManagerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,11 +31,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ExceptionHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\Infrastructure\\Middleware\\ExceptionHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\Infrastructure\\Middleware\\ExceptionHandler.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Middleware\\ExceptionHandler.cs",
-              "ToolTip": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\Infrastructure\\Middleware\\ExceptionHandler.cs",
+              "ToolTip": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\Backend\\ExceptionManager\\Infrastructure\\Middleware\\ExceptionHandler.cs",
               "RelativeToolTip": "Infrastructure\\Middleware\\ExceptionHandler.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABcAAAAlAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-19T18:21:54.399Z",
               "EditorCaption": ""
@@ -46,13 +45,12 @@
               "DocumentIndex": 1,
               "Title": "ExceptionManagerController.cs",
               "DocumentMoniker": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\Infrastructure\\Controller\\ExceptionManagerController.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Controller\\ExceptionManagerController.cs",
+              "RelativeDocumentMoniker": "..\\..\\ExceptionManager\\Infrastructure\\Controller\\ExceptionManagerController.cs",
               "ToolTip": "C:\\Users\\Valentino\\Documents\\Programacion\\ExceptionManager\\ExceptionManager\\Infrastructure\\Controller\\ExceptionManagerController.cs",
-              "RelativeToolTip": "Infrastructure\\Controller\\ExceptionManagerController.cs",
+              "RelativeToolTip": "..\\..\\ExceptionManager\\Infrastructure\\Controller\\ExceptionManagerController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAowBYAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T17:05:16.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T17:05:16.143Z"
             }
           ]
         }

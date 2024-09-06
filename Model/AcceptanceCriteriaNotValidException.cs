@@ -1,4 +1,4 @@
-﻿namespace TestManager.Exceptions;
+﻿namespace ExceptionManager.Model;
 
 public class AcceptanceCriteriaNotValidException : Exception
 {

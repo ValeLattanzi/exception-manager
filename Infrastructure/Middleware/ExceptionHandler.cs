@@ -9,29 +9,17 @@ public interface IExceptionHandlerMiddleware
     Task InvokeAsync(HttpContext httpContext);
 }
 
-public class ExceptionHandler : IExceptionHandlerMiddleware
+public class ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> logger) : IExceptionHandlerMiddleware
 {
-    private readonly RequestDelegate _next;
-    private readonly ILogger<ExceptionHandler> _logger;
-    private readonly HttpClient _httpClient;
-
-    public ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> logger, IHttpClientFactory httpClientFactory)
-    {
-        _next = next;
-        _logger = logger;
-        _httpClient = httpClientFactory.CreateClient();
-        _httpClient.BaseAddress = new Uri("http://localhost:7002");
-    }
-
     public async Task InvokeAsync(HttpContext httpContext)
     {
         try
         {
-            await _next(httpContext);
+            await next(httpContext);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Unhandled Exception");
+            logger.LogError(ex, "Unhandled Exception");
             await HandleExceptionAsync(httpContext, ex);
         }
     }

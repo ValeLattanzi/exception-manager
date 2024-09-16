@@ -1,6 +1,4 @@
 ﻿namespace ExceptionManager.Model;
 
-public class AcceptanceCriteriaNotValidException : Exception
-{
-    public AcceptanceCriteriaNotValidException(string useCase, string acceptanceCriteria) : base($"The use case {useCase} was not passed the acceptance criteria {acceptanceCriteria}") { }
-}
+public class AcceptanceCriteriaNotValidException(string useCase, string acceptanceCriteria)
+    : Exception($"The use case {useCase} was not passed the acceptance criteria {acceptanceCriteria}");

@@ -1,10 +1,11 @@
-﻿using System.Net;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Net;
 
 namespace ExceptionManager.Pattern.Result;
 
-public class Result<T>
+public class Result
 {
-    public Result(bool isSuccess, Error error, T? value = default)
+    public Result(bool isSuccess, Error error)
     {
         if (isSuccess && error != Error.None || !isSuccess && error == Error.None)
         {
@@ -13,11 +14,9 @@ public class Result<T>
 
         IsSuccess = isSuccess;
         Error = error;
-        Value = value;
     }
 
     #region Attributes
-    public T? Value { get; }
     public Error Error { get; }
 
     public bool IsSuccess { get; }
@@ -25,14 +24,41 @@ public class Result<T>
     #endregion
 
     #region Responsibilities
-    public static Result<T> Success(T? value = default)
+    public static Result Success()
     {
-        return new Result<T>(true, Error.None, value);
+        return new Result(true, Error.None);
     }
 
-    public static Result<T> Failure(Error error)
+    public static Result Failure(Error error)
     {
-        return new Result<T>(default, error);
+        return new Result(default, error);
     }
     #endregion
+}
+
+public class Result<T> : Result
+{
+    private readonly T? _value;
+
+    public Result(T? value, bool isSuccess, Error error) : base(isSuccess, error)
+    {
+        _value = value;
+    }
+
+    [NotNull]
+    public T Value => IsSuccess
+        ? _value!
+        : throw new InvalidOperationException("The value of a failure can't be accessed.");
+
+    public static Result<T> Success(T value)
+    {
+        return new Result<T>(value, true, Error.None);
+    }
+
+    public new static Result<T> Failure(Error error)
+    {
+        return new Result<T>(default, false, error);
+    }
+
+    public static implicit operator Result<T>(T? value) => value is not null ? Success(value) : Failure(Error.NullValue);
 }

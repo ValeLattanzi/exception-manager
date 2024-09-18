@@ -2,26 +2,37 @@
 
 namespace ExceptionManager.Pattern.Result;
 
-public class Result<T>(T? value, HttpStatusCode statusCode, Exception? exception)
+public class Result<T>
 {
-    #region Attributes
-    public T? Value { get; } = value;
-    public Exception? Exception { get; } = exception;
-    public HttpStatusCode StatusCode { get; } = statusCode;
+    public Result(bool isSuccess, Error error, T? value = default)
+    {
+        if (isSuccess && error != Error.None || !isSuccess && error == Error.None)
+        {
+            throw new ArgumentException("Success result can't have an error");
+        }
 
-    public bool IsSuccess => Exception is null;
-    public bool IsFailure => Exception is not null;
+        IsSuccess = isSuccess;
+        Error = error;
+        Value = value;
+    }
+
+    #region Attributes
+    public T? Value { get; }
+    public Error Error { get; }
+
+    public bool IsSuccess { get; }
+    public bool IsFailure => !IsSuccess;
     #endregion
 
     #region Responsibilities
-    public static Result<T> Success(T value, HttpStatusCode statusCode)
+    public static Result<T> Success(T? value = default)
     {
-        return new(value, statusCode, null);
+        return new Result<T>(true, Error.None, value);
     }
 
-    public static Result<T> Failure(Exception exception, HttpStatusCode statusCode)
+    public static Result<T> Failure(Error error)
     {
-        return new(default, statusCode, exception);
+        return new Result<T>(default, error);
     }
     #endregion
 }

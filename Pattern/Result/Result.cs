@@ -1,4 +1,6 @@
-﻿namespace ExceptionManager.Pattern.Result;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace ExceptionManager.Pattern.Result;
 
 public class Result
 {
@@ -20,22 +22,33 @@ public class Result
     {
         return new Result(true, Error.None);
     }
+
+    public static Result<T> Success<T>(T value)
+    {
+        return new Result<T>(value, true, Error.None);
+    }
+
     public static Result Failure(Error error)
     {
         return new Result(false, error);
     }
 
+    public static Result<T> Failure<T>(Error error)
+    {
+        return new Result<T>(default, false, error);
+    }
 }
 
 public class Result<T> : Result
 {
     private readonly T? _value;
 
-    internal Result(T? value, bool isSuccess, Error error) : base(isSuccess, error)
+    public Result(T? value, bool isSuccess, Error error) : base(isSuccess, error)
     {
         _value = value;
     }
 
+    [NotNull]
     public T Value => IsSuccess
         ? _value!
         : throw new InvalidOperationException("The value of a failure result can't be accessed.");
@@ -57,10 +70,6 @@ public class Result<T> : Result
 
     public static implicit operator Result<T>(T? value)
     {
-        if (value is null)
-            return Failure(Error.NullValue);
-        else
-            return Success(value);
-        // return value is not null ? Success(value) : Failure(Error.NullValue);
+        return value is null ? Failure(Error.NullValue) : Success(value);
     }
 }

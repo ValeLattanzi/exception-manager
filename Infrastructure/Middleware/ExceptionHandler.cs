@@ -8,12 +8,12 @@ namespace ExceptionManager.Infrastructure.Middleware;
 
 public interface IExceptionHandlerMiddleware
 {
-    Task InvokeAsync(HttpContext httpContext, CancellationToken cancellationToken);
+    Task InvokeAsync(HttpContext httpContext);
 }
 
 public class ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> logger) : IExceptionHandlerMiddleware
 {
-    public async Task InvokeAsync(HttpContext httpContext, CancellationToken cancellationToken)
+    public async Task InvokeAsync(HttpContext httpContext)
     {
         try
         {
@@ -22,7 +22,7 @@ public class ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> lo
         catch (Exception ex)
         {
             logger.LogError(ex, "Unhandled Exception");
-            await HandleErrorAsync(httpContext, ex, cancellationToken);
+            await HandleErrorAsync(httpContext, ex);
         }
     }
 
@@ -36,8 +36,7 @@ public class ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> lo
         return context.Response.WriteAsync(json);
     }
 
-    private static async Task HandleErrorAsync(HttpContext context, Exception exception,
-        CancellationToken cancellationToken)
+    private static async Task HandleErrorAsync(HttpContext context, Exception exception)
     {
         var problemDetails = exception switch
         {
@@ -69,6 +68,6 @@ public class ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> lo
         };
         context.Response.StatusCode = problemDetails.Status!.Value;
         var problemDetailsJson = JsonSerializer.Serialize(problemDetails);
-        await context.Response.WriteAsync(problemDetailsJson, cancellationToken);
+        await context.Response.WriteAsync(problemDetailsJson);
     }
 }

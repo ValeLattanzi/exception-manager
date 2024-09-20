@@ -1,10 +1,24 @@
 ﻿namespace ExceptionManager.Pattern.Result;
 
-public sealed record Error(string title, string description)
+public record Error(string Code, string Description, ErrorType Type)
 {
-    public static readonly Error None = new(string.Empty, string.Empty);
+    public static readonly Error None = new(string.Empty, string.Empty, ErrorType.None);
 
-    public static implicit operator Result(Error error) => Result.Failure(error);
+    public static readonly Error NullValue = new("Null Value", "Value cannot be null", ErrorType.Validation);
 
-    public static readonly Error NullValue = new("Null Value", "Value cannot be null");
+    public static implicit operator Result(Error error)
+    {
+        return Result.Failure(error);
+    }
+}
+
+public enum ErrorType
+{
+    None,
+    NotFound,
+    BadRequest,
+    Unauthorized,
+    Forbidden,
+    Conflict,
+    Validation
 }

@@ -1,23 +1,24 @@
-﻿using Microsoft.Data.SqlClient;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+using Microsoft.Data.SqlClient;
 
-namespace ExceptionManager.Model;
+namespace ExceptionManager.Model.Exceptions;
 
 public class UniqueConstraintViolationException : Exception
 {
-    public string EntityName { get; }
-    public string PropertyName { get; }
-    public object DuplicateValue { get; }
-    public SqlException? SqlException { get; }
-
-    public UniqueConstraintViolationException(string entityName, string propertyName, object duplicateValue, SqlException? sqlException)
-         : base($"Entity: {entityName}, Property: {propertyName}, Duplicate Value: {duplicateValue}")
+    public UniqueConstraintViolationException(string entityName, string propertyName, object duplicateValue,
+        SqlException? sqlException)
+        : base($"Entity: {entityName}, Property: {propertyName}, Duplicate Value: {duplicateValue}")
     {
         EntityName = entityName;
         PropertyName = propertyName;
         DuplicateValue = duplicateValue;
         SqlException = sqlException ?? null;
     }
+
+    public string EntityName { get; }
+    public string PropertyName { get; }
+    public object DuplicateValue { get; }
+    public SqlException? SqlException { get; }
 
     public override string ToString()
     {

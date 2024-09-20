@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace ExceptionManager.Model;
+namespace ExceptionManager.Model.Exceptions;
 
 internal class NotFoundException(string? message) : Exception(message)
 {

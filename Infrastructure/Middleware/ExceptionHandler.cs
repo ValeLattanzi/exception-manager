@@ -1,9 +1,8 @@
-﻿using System.Net;
+﻿using System.Text.Json;
+using ExceptionManager.Model.Exceptions;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using System.Text.Json;
-using ExceptionManager.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace ExceptionManager.Infrastructure.Middleware;
 
@@ -55,8 +54,9 @@ public class ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> lo
                 Detail = badRequest.Message,
                 Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
                 Status = StatusCodes.Status400BadRequest,
-                Extensions =  {
-                    {"errors", badRequest.Errors}
+                Extensions =
+                {
+                    { "errors", badRequest.Errors }
                 }
             },
             _ => new ProblemDetails
@@ -69,6 +69,6 @@ public class ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> lo
         };
         context.Response.StatusCode = problemDetails.Status!.Value;
         var problemDetailsJson = JsonSerializer.Serialize(problemDetails);
-        await context.Response.WriteAsync(problemDetailsJson, cancellationToken: cancellationToken);
+        await context.Response.WriteAsync(problemDetailsJson, cancellationToken);
     }
 }

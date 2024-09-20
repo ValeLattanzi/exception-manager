@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace ExceptionManager.Model;
+namespace ExceptionManager.Model.Exceptions;
 
 public class CannotAddTypeException(Type type) : Exception($"Cannot aggregate the type {type.Name.ToUpper()} to list.")
 {

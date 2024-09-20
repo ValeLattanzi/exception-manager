@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace ExceptionManager.Model;
+namespace ExceptionManager.Model.Exceptions;
 
 public class UnauthorizedAccessUserException() : Exception("Token was expired or incorrect.")
 {

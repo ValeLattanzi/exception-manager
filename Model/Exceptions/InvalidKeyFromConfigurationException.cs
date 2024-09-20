@@ -1,4 +1,4 @@
-﻿namespace ExceptionManager.Model;
+﻿namespace ExceptionManager.Model.Exceptions;
 
 public class InvalidKeyFromConfigurationException : Exception
 {

@@ -1,4 +1,5 @@
 ﻿using ExceptionManager.Pattern.Result;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ZTrainer.Patterns.Result.Results;
@@ -9,15 +10,18 @@ public static class ApiResults
     {
         if (result.IsSuccess)
             throw new InvalidOperationException();
-
-        return new ProblemDetails
+        var problemDetails = new ProblemDetails
         {
             Title = GetTitle(result.Error),
             Detail = GetDetail(result.Error),
             Type = GetType(result.Error.Type),
-            Status = GetStatusCode(result.Error),
-            Extensions = GetErrors(result)
+            Status = GetStatusCode(result.Error)
         };
+
+        var errors = GetErrors(result);
+        foreach (var (key, value) in errors)
+            problemDetails.Extensions.Add(key, value);
+        return problemDetails;
     }
 
     private static string GetTitle(Error error)
@@ -77,7 +81,7 @@ public static class ApiResults
         };
     }
 
-    private static Dictionary<string, object>? GetErrors(ExceptionManager.Pattern.Result.Result result)
+    private static IDictionary<string, object> GetErrors(ExceptionManager.Pattern.Result.Result result)
     {
         if (result.Error is not ValidationError validationError) return null;
 

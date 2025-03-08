@@ -8,9 +8,6 @@ public class LogExceptions : ILogExceptions
 {
     private readonly Dictionary<Type, HttpStatusCode> _exceptionTypes = new()
     {
-        { typeof(UnauthorizedAccessUserException), UnauthorizedAccessUserException.HttpStatusCode },
-        { typeof(TypeNotFoundException), TypeNotFoundException.HttpStatusCode },
-        { typeof(NotFoundException), NotFoundException.HttpStatusCode },
         { typeof(CannotAddTypeException), CannotAddTypeException.HttpStatusCode }
     };
 

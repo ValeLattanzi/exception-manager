@@ -1,4 +1,4 @@
-﻿using ExceptionManager.Pattern.Result;
+﻿using result_pattern;
 
 namespace ExceptionManager.Model.Exceptions;
 

@@ -40,23 +40,16 @@ public class ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> lo
     {
         var problemDetails = exception switch
         {
-            NotFoundException notFound => new ProblemDetails
-            {
-                Title = "Bad Request",
-                Detail = notFound.Message,
-                Type = "https://tools.ietf.org/html/rfc7231#section-6.5.4",
-                Status = StatusCodes.Status404NotFound
-            },
             BadRequestException badRequest => new ProblemDetails
             {
                 Title = "Bad Request",
-                Detail = badRequest.Message,
+                Detail = badRequest.Message + badRequest.Errors.Select((error) => $"{error}\n"),
                 Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
                 Status = StatusCodes.Status400BadRequest,
-                Extensions =
-                {
-                    { "errors", badRequest.Errors }
-                }
+                // Extensions =
+                // {
+                //     { "errors", badRequest.Errors }
+                // }
             },
             _ => new ProblemDetails
             {
